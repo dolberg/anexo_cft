@@ -1,9 +1,6 @@
 import React from 'react'
-import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
-import Box from '@material-ui/core/Box';
 
 
 const Final = ({nextStep, prevStep, values}) => {

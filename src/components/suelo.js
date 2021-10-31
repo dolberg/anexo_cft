@@ -1,7 +1,5 @@
 import React from 'react';
-import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
 import NativeSelect from '@material-ui/core/NativeSelect';
 
@@ -66,10 +64,10 @@ const Suelo = ({nextStep, prevStep, handleChange, values}) => {
     			}}
   			>
   			<option value={''}> Seleccione el pH del Suelo</option>
-    		<option value={'alcalino'}>Alcalino (menor a 5,5)</option>
-    		<option value={'levemente alcalino'}>Levemente Alcalino (entre 5,5 y 7,3)</option>
-    		<option value={'levemente acido'}>Levemente Ácido(entre 7,3 y 8,5)</option>
-    		<option value={'acido'}>Ácido (mayor a 8,5)</option>
+    		<option value={'alcalino'}>Alcalino (mayor a 8,5)</option>
+    		<option value={'levemente alcalino'}>Levemente Alcalino (entre 7,3 y 8,5)</option>
+    		<option value={'levemente acido'}>Levemente Ácido (entre 5,5 y 7,3)</option>
+    		<option value={'acido'}>Ácido (menor a 5,5)</option>(
   			</NativeSelect>
 			<br />
 			<br />

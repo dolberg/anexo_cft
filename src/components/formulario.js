@@ -5,7 +5,6 @@ import Productivo from './productivo';
 import Residuos from './residuos';
 import Forestal from './forestal';
 import Final from './final';
-import Success from './success';
 
 export default class Formulario extends Component{
 	state = {
@@ -108,10 +107,6 @@ export default class Formulario extends Component{
       				prevStep={this.prevStep}
             		values={values}
       				/>
-      			)
-      		case 7:
-    			return (
-      				<Success />
       			)
   			// never forget the default case, otherwise VS code would be mad!
   		default: 
