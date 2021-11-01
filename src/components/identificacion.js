@@ -28,8 +28,8 @@ const Identificacion = ({nextStep, handleChange, values}) => {
 			/>
 			<br />
 			<TextField
-  				placeholder="Lote"
-  				label="Lote"
+  				placeholder="Lote(s)"
+  				label="Lote(s)"
   				onChange={handleChange('lote')}
   				defaultValue={values.lote}
 			/>
