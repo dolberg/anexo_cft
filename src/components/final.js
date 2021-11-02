@@ -31,6 +31,9 @@ const Final = ({nextStep, prevStep, values}) => {
           			<td>Establecimiento:</td>
           			<td>{values.establecimiento}</td>
           			<tr/>
+          			<td>Cultivo:</td>
+          			<td>{values.cultivo}</td>
+          			<tr/>
           			<td>Lote:</td>
           			<td>{values.lote}</td>
           		</tbody>

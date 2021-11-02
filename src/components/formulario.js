@@ -11,6 +11,7 @@ export default class Formulario extends Component{
     	step: 1,
     	razonSocial: '',
     	establecimiento: '',
+    	cultivo: '',
     	lote: '',
     	materiaOrganica: '',
     	humedad: '',
@@ -52,8 +53,8 @@ export default class Formulario extends Component{
 
 	render() {
 		const { step } = this.state;
-		const { razonSocial, establecimiento, lote, materiaOrganica, humedad, pH, cambioUso, tiempoCambioUso, porcentajeCambioUso, cambioLabranza, tiempoCambioLabranza, porcentajeCambioLabranza, cambioCoberturas, tiempoCambioCoberturas, porcentajeCambioCoberturas, tratamientoRastrojos, comentariosRastrojos, clasificacionArboles, dapAnterior, densidadAnterior, dapActual, densidadActual} = this.state;
-		const values = { razonSocial, establecimiento, lote, materiaOrganica, humedad, pH, cambioUso, tiempoCambioUso, porcentajeCambioUso, cambioLabranza, tiempoCambioLabranza, porcentajeCambioLabranza, cambioCoberturas, tiempoCambioCoberturas, porcentajeCambioCoberturas, tratamientoRastrojos, comentariosRastrojos, clasificacionArboles, dapAnterior, densidadAnterior, dapActual, densidadActual} 
+		const { razonSocial, establecimiento, cultivo, lote, materiaOrganica, humedad, pH, cambioUso, tiempoCambioUso, porcentajeCambioUso, cambioLabranza, tiempoCambioLabranza, porcentajeCambioLabranza, cambioCoberturas, tiempoCambioCoberturas, porcentajeCambioCoberturas, tratamientoRastrojos, comentariosRastrojos, clasificacionArboles, dapAnterior, densidadAnterior, dapActual, densidadActual} = this.state;
+		const values = { razonSocial, establecimiento, cultivo, lote, materiaOrganica, humedad, pH, cambioUso, tiempoCambioUso, porcentajeCambioUso, cambioLabranza, tiempoCambioLabranza, porcentajeCambioLabranza, cambioCoberturas, tiempoCambioCoberturas, porcentajeCambioCoberturas, tratamientoRastrojos, comentariosRastrojos, clasificacionArboles, dapAnterior, densidadAnterior, dapActual, densidadActual} 
 	
 		switch (step) {
   			case 1: 
