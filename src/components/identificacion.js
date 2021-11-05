@@ -27,20 +27,6 @@ const Identificacion = ({nextStep, handleChange, values}) => {
   				defaultValue={values.establecimiento}
 			/>
 			<br />
-			<TextField
-  				placeholder="Cultivo"
-  				label="Cultivo Destino"
-  				onChange={handleChange('cultivo')}
-  				defaultValue={values.cultivo}
-			/>
-			<br />
-			<TextField
-  				placeholder="Lote(s)"
-  				label="Lote(s)"
-  				onChange={handleChange('lote')}
-  				defaultValue={values.lote}
-			/>
-			<br />
 			<br />
 
 			<Button
