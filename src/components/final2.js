@@ -3,7 +3,7 @@ import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 
 
-const Final = ({nextStep, prevStep, values, climate, mo, humedadSuelo, pHSuelo, cambiosProductivos, manejoResiduos, tipoArboles}) => {
+const Final = ({nextStep, prevStep, values}) => {
 	const Previous = e => {
   		e.preventDefault();
   		prevStep();
@@ -11,34 +11,12 @@ const Final = ({nextStep, prevStep, values, climate, mo, humedadSuelo, pHSuelo, 
 
 	const handlePrint = (event) => {
   		event.preventDefault();
-  		var formData= new FormData();
-			formData.append('razonSocial', values.razonSocial)
-			formData.append('establecimiento', values.establecimiento)
-			formData.append('clima', values.clima)
-			formData.append('materiaOrganica', values.materiaOrganica)
-			formData.append('humedad', values.humedad)
-			formData.append('pH', values.pH)
-			formData.append('cambioUso', values.cambioUso)
-			formData.append('tiempoCambioUso', values.tiempoCambioUso)
-			formData.append('porcentajeCambioUso', values.porcentajeCambioUso)
-			formData.append('cambioLabranza', values.cambioLabranza)
-			formData.append('tiempoCambioLabranza', values.tiempoCambioLabranza)
-			formData.append('porcentajeCambioLabranza', values.porcentajeCambioLabranza)
-			formData.append('cambioCoberturas', values.cambioCoberturas)
-			formData.append('tiempoCambioCoberturas', values.tiempoCambioCoberturas)
-			formData.append('porcentajeCambioCoberturas', values.porcentajeCambioCoberturas)
-			formData.append('tratamientoRastrojos', values.tratamientoRastrojos)
-			formData.append('clasificacionArboles', values.clasificacionArboles)
-			formData.append('dapAnterior', values.dapAnterior)
-			formData.append('densidadAnterior', values.densidadAnterior)
-			formData.append('dapActual', values.dapActual)
-			formData.append('densidadActual', values.densidadActual)
   		var http=new XMLHttpRequest();
   		http.onreadystatechange = function (){
-  			if (this.readyState === 4 && this.status === 200){
+  			if (this.readyState == 4 && this.status == 200){
   				var valorConsulta = JSON.parse(this.response)
-  				var formNumber= valorConsulta.data.id
-  				var number = document.getElementById('number')
+  				var formNumber= valorConsulta.Id
+  				var formulario = document.getElementById('form')
   				var table = document.createElement('table')
   				var tbody = document.createElement('tbody')
   				var espacioTitulo= document.createElement('td')
@@ -50,86 +28,18 @@ const Final = ({nextStep, prevStep, values, climate, mo, humedadSuelo, pHSuelo, 
   				espacionumero.appendChild(ifonumero)
   				tbody.appendChild(espacionumero)
   				table.appendChild(tbody)
-  				number.appendChild(table)
-  				var tabla=document.getElementById('form')
-  				var newWin=window.open("");
-  				newWin.document.write(tabla.outerHTML)
-  				newWin.print();
-  				newWin.close();
   			}
   		}
-  		http.open('POST', 'http://127.0.0.1:5000/formularios-cft', true)
-  		http.setRequestHeader('Contemt-type', 'form-data')
-  		http.send(formData)
+  		var tabla=document.getElementById('form')
+  		var newWin=window.open("");
+  		newWin.document.write(tabla.outerHTML)
+  		newWin.print();
+  		newWin.close();
 	};
-	var caracterizacionClima='';
-	var caracterizacionMo='';
-	var caracterizacionHumedadSuelo='';
-	var caracterizacionPHSuelo='';
-	var cambiosUsoDeLaTierra='';
-	var cambioSistemaLabraznas='';
-	var cambioUsoCoberturas='';
-	var caracterizacionManejoResiduos='';
-	var arbol='';
-
-	for (let i=0; i< climate.length; i++){
-		if (climate[i].id = values.clima){
-			caracterizacionClima=climate[i].value
-		}
-	}
-
-	for (let i=0; i< mo.length; i++){
-		if (mo[i].id = values.materiaOrganica){
-			caracterizacionMo=mo[i].value
-		}
-	}
-
-	for (let i=0; i< humedadSuelo.length; i++){
-		if (humedadSuelo[i].id = values.humedad){
-			caracterizacionHumedadSuelo=humedadSuelo[i].value
-		}
-	}
-
-	for (let i=0; i< pHSuelo.length; i++){
-		if (pHSuelo[i].id = values.pH){
-			caracterizacionPHSuelo=pHSuelo[i].value
-		}
-	}
-
-	for (let i=0; i< cambiosProductivos.length; i++){
-		if (cambiosProductivos[i].ID = values.cambioUso){
-			cambiosUsoDeLaTierra=cambiosProductivos[i].value
-		}
-	}
-
-	for (let i=0; i< cambiosProductivos.length; i++){
-		if (cambiosProductivos[i].ID = values.cambioLabranza){
-			cambioSistemaLabraznas=cambiosProductivos[i].value
-		}
-	}
-
-	for (let i=0; i< cambiosProductivos.length; i++){
-		if (cambiosProductivos[i].ID = values.cambioCoberturas){
-			cambioUsoCoberturas=cambiosProductivos[i].value
-		}
-	}
-
-	for (let i=0; i< manejoResiduos.length; i++){
-		if (manejoResiduos[i].id = values.tratamientoRastrojos){
-			caracterizacionManejoResiduos=manejoResiduos[i].value
-		}
-	}
-
-	for (let i=0; i< tipoArboles.length; i++){
-		if (tipoArboles[i].id = values.clasificacionArboles){
-			arbol=tipoArboles[i].tipo
-		}
-	}
 
 	return (
 		<div>
 		<div id="form">
-						<div id="number"></div>
 		
           	<h2> Datos de Identificación </h2>
           	<table>
@@ -139,9 +49,6 @@ const Final = ({nextStep, prevStep, values, climate, mo, humedadSuelo, pHSuelo, 
           			<tr/>
           			<td>Establecimiento:</td>
           			<td>{values.establecimiento}</td>
-          			<tr/>
-          			<td>Clima:</td>
-          			<td>{caracterizacionClima}</td>
           		</tbody>
           	</table>
           		
@@ -152,13 +59,13 @@ const Final = ({nextStep, prevStep, values, climate, mo, humedadSuelo, pHSuelo, 
           		<tbody>
 			
           			<td>Contenido de Materia Orgánica:</td>
-          			<td>{caracterizacionMo}</td>
+          			<td>{values.materiaOrganica}</td>
           			<tr/>
           			<td>Caracterización Hídrica del suelo:</td>
-          			<td>{caracterizacionHumedadSuelo}</td>
+          			<td>{values.humedad}</td>
           			<tr/>
           			<td>pH del Suelo:</td>
-          			<td>{caracterizacionPHSuelo}</td>
+          			<td>{values.pH}</td>
           		</tbody>
           	</table>
           		
@@ -173,7 +80,7 @@ const Final = ({nextStep, prevStep, values, climate, mo, humedadSuelo, pHSuelo, 
 					<th> Porcentaje afectado</th>
 				</thead>
 				<tbody>
-          			<td>{cambiosUsoDeLaTierra}</td>
+          			<td>{values.cambioUso}</td>
           			<td>{values.tiempoCambioUso} años</td>
           			<td>{values.porcentajeCambioUso}%</td>
           		</tbody>
@@ -188,7 +95,7 @@ const Final = ({nextStep, prevStep, values, climate, mo, humedadSuelo, pHSuelo, 
 					<th> Porcentaje afectado</th>
 				</thead>
 				<tbody>
-          			<td>{cambioSistemaLabraznas}</td>
+          			<td>{values.cambioLabranza}</td>
           			<td>{values.tiempoCambioLabranza} años</td>
           			<td>{values.porcentajeCambioLabranza}%</td>
           		</tbody>
@@ -202,7 +109,7 @@ const Final = ({nextStep, prevStep, values, climate, mo, humedadSuelo, pHSuelo, 
 					<th> Porcentaje afectado</th>
 				</thead>
 				<tbody>
-          			<td>{cambioUsoCoberturas}</td>
+          			<td>{values.cambioCoberturas}</td>
           			<td>{values.tiempoCambioCoberturas} años</td>
           			<td>{values.porcentajeCambioCoberturas}%</td>
           		</tbody>
@@ -213,7 +120,7 @@ const Final = ({nextStep, prevStep, values, climate, mo, humedadSuelo, pHSuelo, 
           	<h2> Manejo de Residuos de Cultivo </h2>
           	<table>
           		<tbody>
-          			<td>{caracterizacionManejoResiduos}</td>
+          			<td>{values.tratamientoRastrojos}</td>
           			<td>{values.comentariosRastrojos}</td>
           		</tbody>
           	</table>
@@ -225,7 +132,7 @@ const Final = ({nextStep, prevStep, values, climate, mo, humedadSuelo, pHSuelo, 
           	<table>
           		<tbody>
           			<td>Clasficación Arborea Predominante</td>
-          			<td>{arbol}</td>
+          			<td>{values.clasificacionArboles}</td>
           		</tbody>
           	</table>
 

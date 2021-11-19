@@ -30,10 +30,10 @@ const Suelo = ({nextStep, prevStep, handleChange, values}) => {
     			}}
   			>
   			<option value={''}> Seleccione el Contenido de Materia Organica del Suelo</option>
-    		<option value={'bajo'}>Bajo (menor a 1,72%)</option>
-    		<option value={'medio'}>Medio (entre 1,72 y 5,16%)</option>
-    		<option value={'alto'}>Alto (entre 5,16 y 10,32%)</option>
-    		<option value={'muy alto'}>Muy Alto (mayor a 10,32%)</option>
+    		<option value='1'>Bajo (menor a 1,72%)</option>
+    		<option value='2'>Medio (entre 1,72 y 5,16%)</option>
+    		<option value='3'>Alto (entre 5,16 y 10,32%)</option>
+    		<option value='4'>Muy Alto (mayor a 10,32%)</option>
   			</NativeSelect>
 			<br />
 			<InputLabel variant="standard" htmlFor="uncontrolled-native">
@@ -48,8 +48,8 @@ const Suelo = ({nextStep, prevStep, handleChange, values}) => {
     			}}
   			>
   			<option value={''}> Seleccione el tipo de suelo según sus características hídricas</option>
-    		<option value={'humedo'}>Húmedo (no posee limitantes severas de humedad durante el ciclo del cultivo)</option>
-    		<option value={'seco'}>Seco (con déficit hídrico durante una parte significativa del ciclo de cultivo)</option>
+    		<option value='1'>Húmedo (no posee limitantes severas de humedad durante el ciclo del cultivo)</option>
+    		<option value='2'>Seco (con déficit hídrico durante una parte significativa del ciclo de cultivo)</option>
   			</NativeSelect>
 			<br />
 			<InputLabel variant="standard" htmlFor="uncontrolled-native">
@@ -64,10 +64,10 @@ const Suelo = ({nextStep, prevStep, handleChange, values}) => {
     			}}
   			>
   			<option value={''}> Seleccione el pH del Suelo</option>
-    		<option value={'alcalino'}>Alcalino (mayor a 8,5)</option>
-    		<option value={'levemente alcalino'}>Levemente Alcalino (entre 7,3 y 8,5)</option>
-    		<option value={'levemente acido'}>Levemente Ácido (entre 5,5 y 7,3)</option>
-    		<option value={'acido'}>Ácido (menor a 5,5)</option>(
+    		<option value='4'>Alcalino (mayor a 8,5)</option>
+    		<option value='3'>Levemente Alcalino (entre 7,3 y 8,5)</option>
+    		<option value='2'>Levemente Ácido (entre 5,5 y 7,3)</option>
+    		<option value='1'>Ácido (menor a 5,5)</option>(
   			</NativeSelect>
 			<br />
 			<br />

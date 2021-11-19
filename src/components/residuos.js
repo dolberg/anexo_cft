@@ -33,22 +33,16 @@ const Residuos= ({nextStep, prevStep, handleChange, values}) => {
     			}}
   			>
   			<option value={''}></option>
-    		<option value={'Removidos sin cambio'}>Removidos y Dejados sin tratar en Montones o Pozos</option>
-    		<option value={'Removidos Aireados sin forzar'}>Removidos con Aireacón no Forzada</option>
-    		<option value={'compostado y removido-aireacion forzosa'}>Compostado y Removido/ Aireación Forzada</option>
-    		<option value={'Compostado'}>Compostado</option>
-    		<option value={'en el lote'}>Dejado en el lote/ Incorporado o como cobertura</option>
-    		<option value={'quemado'}>Quemado</option>
-    		<option value={'retirado del establecimiento'}>Retirado del Establecimiento</option>
+    		<option value='1'>Removidos y Dejados sin tratar en Montones o Pozos</option>
+    		<option value='2'>Removidos con Aireacón no Forzada</option>
+    		<option value='3'>Compostado y Removido/ Aireación Forzada</option>
+    		<option value='4'>Dejado en el lote/ Incorporado o como cobertura</option>
+    		<option value='5'>Quemado</option>
+    		<option value='6'>Retirado del Establecimiento</option>
   			</NativeSelect>
   			</FormControl>
 
-  			<TextField
-  				
-  				label="Comentarios"
-  				onChange={handleChange('comentariosRastrojos')}
-  				defaultValue={values.comentariosRastrojos}
-			/>
+  			
 
 
 			<br />

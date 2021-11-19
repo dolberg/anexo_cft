@@ -33,8 +33,8 @@ const Forestal = ({nextStep, prevStep, handleChange, values}) => {
     			}}
   			>
   			<option value={''}></option>
-    		<option value={'Coniferas'}>Coníferas</option>
-    		<option value={'Árboles de Madera Dura'}>Árboles de Madera Dura (ej, Eucalyptus, Roble, Alamo)</option>
+    		<option value='5'>Coníferas</option>
+    		<option value='6'>Árboles de Madera Dura (ej, Eucalyptus, Roble, Alamo)</option>
   			</NativeSelect>
   			</FormControl>
 
