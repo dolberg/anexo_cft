@@ -30,6 +30,16 @@ const Identificacion = ({nextStep, handleChange, values}) => {
   				defaultValue={values.establecimiento}
 			/>
 			<br />
+
+			<TextField
+  				id="outlined-number"
+  				type="number"
+  				placeholder="Distancia"
+  				label="Distancia al Puerto(Km)"
+  				onChange={handleChange('distancia')}
+  				defaultValue={values.distancia}
+			/>
+			<br />
 			<FormControl>
 			<InputLabel variant="standard" htmlFor="uncontrolled-native">
     			Clima

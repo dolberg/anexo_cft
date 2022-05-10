@@ -11,11 +11,57 @@ const Final = ({nextStep, prevStep, values, climate, mo, humedadSuelo, pHSuelo, 
 
 	const handlePrint = (event) => {
   		event.preventDefault();
-  		var tabla=document.getElementById('form')
-  		var newWin=window.open("");
-  		newWin.document.write(tabla.outerHTML)
-  		newWin.print();
-  		newWin.close();
+  		var formData= new FormData();
+			formData.append('razonSocial', values.razonSocial)
+			formData.append('establecimiento', values.establecimiento)
+			formData.append('distancia', values.distancia)
+			formData.append('clima', values.clima)
+			formData.append('materiaOrganica', values.materiaOrganica)
+			formData.append('humedad', values.humedad)
+			formData.append('pH', values.pH)
+			formData.append('cambioUso', values.cambioUso)
+			formData.append('tiempoCambioUso', values.tiempoCambioUso)
+			formData.append('porcentajeCambioUso', values.porcentajeCambioUso)
+			formData.append('cambioLabranza', values.cambioLabranza)
+			formData.append('tiempoCambioLabranza', values.tiempoCambioLabranza)
+			formData.append('porcentajeCambioLabranza', values.porcentajeCambioLabranza)
+			formData.append('cambioCoberturas', values.cambioCoberturas)
+			formData.append('tiempoCambioCoberturas', values.tiempoCambioCoberturas)
+			formData.append('porcentajeCambioCoberturas', values.porcentajeCambioCoberturas)
+			formData.append('tratamientoRastrojos', values.tratamientoRastrojos)
+			formData.append('clasificacionArboles', values.clasificacionArboles)
+			formData.append('dapAnterior', values.dapAnterior)
+			formData.append('densidadAnterior', values.densidadAnterior)
+			formData.append('dapActual', values.dapActual)
+			formData.append('densidadActual', values.densidadActual)
+  		var http=new XMLHttpRequest();
+  		http.onreadystatechange = function (){
+  			if (this.readyState === 4 && this.status === 200){
+  				var valorConsulta = JSON.parse(this.response)
+  				var formNumber= valorConsulta.data.id
+  				var number = document.getElementById('number')
+  				var table = document.createElement('table')
+  				var tbody = document.createElement('tbody')
+  				var espacioTitulo= document.createElement('td')
+  				var infoTitulo=document.createTextNode("N° formulario:")
+  				espacioTitulo.appendChild(infoTitulo)
+  				tbody.appendChild(espacioTitulo)
+  				var espacionumero= document.createElement('td')
+  				var ifonumero= document.createTextNode(formNumber)
+  				espacionumero.appendChild(ifonumero)
+  				tbody.appendChild(espacionumero)
+  				table.appendChild(tbody)
+  				number.appendChild(table)
+  				var tabla=document.getElementById('form')
+  				var newWin=window.open("");
+  				newWin.document.write(tabla.outerHTML)
+  				newWin.print();
+  				newWin.close();
+  			}
+  		}
+  		http.open('POST', 'http://127.0.0.1:5000/formularios-cft', true)
+  		http.setRequestHeader('Contemt-type', 'form-data')
+  		http.send(formData)
 	};
 	var caracterizacionClima='';
 	var caracterizacionMo='';

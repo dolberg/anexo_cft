@@ -513,6 +513,7 @@ export default class Formulario extends Component{
     	step: 1,
     	razonSocial: '',
     	establecimiento: '',
+        distancia:'',
     	clima: '',
     	materiaOrganica: '',
     	humedad: '',
@@ -553,8 +554,8 @@ export default class Formulario extends Component{
 
 	render() {
 		const { step } = this.state;
-		const { razonSocial, establecimiento, clima, materiaOrganica, humedad, pH, cambioUso, tiempoCambioUso, porcentajeCambioUso, cambioLabranza, tiempoCambioLabranza, porcentajeCambioLabranza, cambioCoberturas, tiempoCambioCoberturas, porcentajeCambioCoberturas, tratamientoRastrojos, clasificacionArboles, dapAnterior, densidadAnterior, dapActual, densidadActual} = this.state;
-		const values = { razonSocial, establecimiento, clima, materiaOrganica, humedad, pH, cambioUso, tiempoCambioUso, porcentajeCambioUso, cambioLabranza, tiempoCambioLabranza, porcentajeCambioLabranza, cambioCoberturas, tiempoCambioCoberturas, porcentajeCambioCoberturas, tratamientoRastrojos, clasificacionArboles, dapAnterior, densidadAnterior, dapActual, densidadActual} 
+		const { razonSocial, establecimiento, distancia, clima, materiaOrganica, humedad, pH, cambioUso, tiempoCambioUso, porcentajeCambioUso, cambioLabranza, tiempoCambioLabranza, porcentajeCambioLabranza, cambioCoberturas, tiempoCambioCoberturas, porcentajeCambioCoberturas, tratamientoRastrojos, clasificacionArboles, dapAnterior, densidadAnterior, dapActual, densidadActual} = this.state;
+		const values = { razonSocial, establecimiento, distancia, clima, materiaOrganica, humedad, pH, cambioUso, tiempoCambioUso, porcentajeCambioUso, cambioLabranza, tiempoCambioLabranza, porcentajeCambioLabranza, cambioCoberturas, tiempoCambioCoberturas, porcentajeCambioCoberturas, tratamientoRastrojos, clasificacionArboles, dapAnterior, densidadAnterior, dapActual, densidadActual} 
 		const climate=this.climate
 		const mo=this.mo
 		const humedadSuelo=this.humedadSuelo
