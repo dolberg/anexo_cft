@@ -15,8 +15,8 @@ const Productivo = ({nextStep, prevStep, handleChange, values}) => {
   		e.preventDefault();
   		prevStep();
 	}
-	if(values.clima===1){
-		if(values.humedad===1){
+	if(values.clima==1){
+		if(values.humedad==1){
 			return (
 				<div>
 					<h1> Cambios en el Sistema Productivo </h1>
@@ -39,7 +39,7 @@ const Productivo = ({nextStep, prevStep, handleChange, values}) => {
     						<option value='9'>Pradera a Bosque</option>
     						<option value='13'>Pradera a Tierra de Cultivo</option>
     						<option value='17'>Tierra de Cultivo a Bosque</option>
-    						<option value='21'>Tierra de Cultivo a Bosque</option>
+    						<option value='21'>Tierra de Cultivo a Pradera</option>
   						</NativeSelect>
   					</FormControl>
 

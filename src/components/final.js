@@ -27,56 +27,56 @@ const Final = ({nextStep, prevStep, values, climate, mo, humedadSuelo, pHSuelo, 
 	var caracterizacionManejoResiduos='';
 	var arbol='';
 
-	for (let i=0; i< climate.length; i++){
-		if (climate[i].id = values.clima){
-			caracterizacionClima=climate[i].value
+	for (var a=0; a< climate.length; a++){
+		if (climate[a].num == values.clima){
+			caracterizacionClima=climate[a].value
 		}
 	}
 
-	for (let i=0; i< mo.length; i++){
-		if (mo[i].id = values.materiaOrganica){
-			caracterizacionMo=mo[i].value
+	for (var b=0; b< mo.length; b++){
+		if (mo[b].num == values.materiaOrganica){
+			caracterizacionMo=mo[b].value
 		}
 	}
 
-	for (let i=0; i< humedadSuelo.length; i++){
-		if (humedadSuelo[i].id = values.humedad){
-			caracterizacionHumedadSuelo=humedadSuelo[i].value
+	for (var c=0; c< humedadSuelo.length; c++){
+		if (humedadSuelo[c].num == values.humedad){
+			caracterizacionHumedadSuelo=humedadSuelo[c].value
 		}
 	}
 
-	for (let i=0; i< pHSuelo.length; i++){
-		if (pHSuelo[i].id = values.pH){
-			caracterizacionPHSuelo=pHSuelo[i].value
+	for (var d=0; d< pHSuelo.length; d++){
+		if (pHSuelo[d].num == values.pH){
+			caracterizacionPHSuelo=pHSuelo[d].value
 		}
 	}
 
-	for (let i=0; i< cambiosProductivos.length; i++){
-		if (cambiosProductivos[i].ID = values.cambioUso){
-			cambiosUsoDeLaTierra=cambiosProductivos[i].value
+	for (var e=0; e< cambiosProductivos.length; e++){
+		if (cambiosProductivos[e].num == values.cambioUso){
+			cambiosUsoDeLaTierra=cambiosProductivos[e].FromTo
 		}
 	}
 
-	for (let i=0; i< cambiosProductivos.length; i++){
-		if (cambiosProductivos[i].ID = values.cambioLabranza){
-			cambioSistemaLabraznas=cambiosProductivos[i].value
+	for (var f=0; f< cambiosProductivos.length; f++){
+		if (cambiosProductivos[f].num == values.cambioLabranza){
+			cambioSistemaLabraznas=cambiosProductivos[f].FromTo
 		}
 	}
 
-	for (let i=0; i< cambiosProductivos.length; i++){
-		if (cambiosProductivos[i].ID = values.cambioCoberturas){
-			cambioUsoCoberturas=cambiosProductivos[i].value
+	for (var g=0; g< cambiosProductivos.length; g++){
+		if (cambiosProductivos[g].num == values.cambioCoberturas){
+			cambioUsoCoberturas=cambiosProductivos[g].FromTo
 		}
 	}
 
-	for (let i=0; i< manejoResiduos.length; i++){
-		if (manejoResiduos[i].id = values.tratamientoRastrojos){
-			caracterizacionManejoResiduos=manejoResiduos[i].value
+	for (var h=0; h< manejoResiduos.length; h++){
+		if (manejoResiduos[h].num == values.tratamientoRastrojos){
+			caracterizacionManejoResiduos=manejoResiduos[h].value
 		}
 	}
 
-	for (let i=0; i< tipoArboles.length; i++){
-		if (tipoArboles[i].id = values.clasificacionArboles){
+	for (var i=0; i< tipoArboles.length; i++){
+		if (tipoArboles[i].num == values.clasificacionArboles){
 			arbol=tipoArboles[i].tipo
 		}
 	}
