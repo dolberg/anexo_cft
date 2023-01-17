@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Identificacion from './identificacion';
 import Suelo from './suelo';
 import Productivo from './productivo';
+import Riego from './riego';
 import Residuos from './residuos';
 import Forestal from './forestal';
 import Final from './final';
@@ -516,6 +517,67 @@ export default class Formulario extends Component{
 		}
 	]
 
+    metodoRiego=[
+        {
+            num:1,
+            tipo: "Pivote"
+        },
+        {
+            num:2,
+            tipo:"Aspersor"
+        },
+        {
+            num:3,
+            tipo:"Inundacion"
+        },
+        {
+            num:4,
+            tipo:"Goteo"
+        }
+    ]
+
+    fuenteRiego=[
+        {
+            num:1,
+            tipo:"lago, laguna o estanque natural"
+        },
+        {
+            num:2,
+            tipo:"Reservorios o Represas externas"
+        },
+        {
+            num:3,
+            tipo:"Ríos, arroyos o canales"
+        },
+        {
+            num:4,
+            tipo: "Reservorios, tanques, represas o aguadas internas" 
+        },
+        {
+            num:5,
+            tipo:"Pozo"
+        },
+        {
+            num:6,
+            tipo:"Red"
+        }
+    ]
+
+    energiaRiego=[
+        {
+            num:1,
+            tipo:"Electricidad"
+        },
+        {
+            num:2,
+            tipo:"Diesel"
+        },
+        {
+            num:3,
+            tipo:"Gravedad"
+        },
+    ]
+
 	state = {
     	step: 1,
     	razonSocial: '',
@@ -539,7 +601,14 @@ export default class Formulario extends Component{
     	dapAnterior: '',
     	densidadAnterior: '',
     	dapActual: '',
-    	densidadActual: ''
+    	densidadActual: '',
+        tipoRiego: '',
+        fuenteAgua: '',
+        porcentajeRiego:'',
+        profundidadIrrigacion:'',
+        distanciaRiego:'',
+        litrosRiego:'',
+        fuenteEnergiaRiego:''
 	};
 
 	// go back to previous step
@@ -561,8 +630,8 @@ export default class Formulario extends Component{
 
 	render() {
 		const { step } = this.state;
-		const { razonSocial, establecimiento, distancia, clima, materiaOrganica, humedad, pH, cambioUso, tiempoCambioUso, porcentajeCambioUso, cambioLabranza, tiempoCambioLabranza, porcentajeCambioLabranza, cambioCoberturas, tiempoCambioCoberturas, porcentajeCambioCoberturas, tratamientoRastrojos, clasificacionArboles, dapAnterior, densidadAnterior, dapActual, densidadActual} = this.state;
-		const values = { razonSocial, establecimiento, distancia, clima, materiaOrganica, humedad, pH, cambioUso, tiempoCambioUso, porcentajeCambioUso, cambioLabranza, tiempoCambioLabranza, porcentajeCambioLabranza, cambioCoberturas, tiempoCambioCoberturas, porcentajeCambioCoberturas, tratamientoRastrojos, clasificacionArboles, dapAnterior, densidadAnterior, dapActual, densidadActual} 
+		const { razonSocial, establecimiento, distancia, clima, materiaOrganica, humedad, pH, cambioUso, tiempoCambioUso, porcentajeCambioUso, cambioLabranza, tiempoCambioLabranza, porcentajeCambioLabranza, cambioCoberturas, tiempoCambioCoberturas, porcentajeCambioCoberturas, tratamientoRastrojos, clasificacionArboles, dapAnterior, densidadAnterior, dapActual, densidadActual, tipoRiego,fuenteAgua, porcentajeRiego,profundidadIrrigacion, distanciaRiego, litrosRiego, fuenteEnergiaRiego} = this.state;
+		const values = { razonSocial, establecimiento, distancia, clima, materiaOrganica, humedad, pH, cambioUso, tiempoCambioUso, porcentajeCambioUso, cambioLabranza, tiempoCambioLabranza, porcentajeCambioLabranza, cambioCoberturas, tiempoCambioCoberturas, porcentajeCambioCoberturas, tratamientoRastrojos, clasificacionArboles, dapAnterior, densidadAnterior, dapActual, densidadActual, tipoRiego,fuenteAgua, porcentajeRiego,profundidadIrrigacion, distanciaRiego, litrosRiego, fuenteEnergiaRiego} 
 		const climate=this.climate
 		const mo=this.mo
 		const humedadSuelo=this.humedadSuelo
@@ -570,6 +639,9 @@ export default class Formulario extends Component{
 		const cambiosProductivos=this.cambiosProductivos
 		const manejoResiduos=this.manejoResiduos
 		const tipoArboles= this.tipoArboles
+        const metodoRiego= this.metodoRiego
+        const fuenteRiego= this.fuenteRiego
+        const energiaRiego= this.energiaRiego
 		switch (step) {
   			case 1: 
     			return (
@@ -597,7 +669,16 @@ export default class Formulario extends Component{
             		values={values}
       				/>
     			)
-  			case 4:
+            case 4:
+                return (
+                    <Riego 
+                    nextStep={this.nextStep}
+                    prevStep={this.prevStep}
+                    handleChange={this.handleChange}
+                    values={values}
+                    />
+                )
+  			case 5:
     			return (
       				<Residuos 
       				nextStep={this.nextStep}
@@ -606,7 +687,7 @@ export default class Formulario extends Component{
             		values={values}
       				/>
       			)
-      		case 5:
+      		case 6:
     			return (
       				<Forestal 
       				nextStep={this.nextStep}
@@ -616,7 +697,7 @@ export default class Formulario extends Component{
             		tipoArboles= {tipoArboles}
       				/>
       			)
-      		case 6:
+      		case 7:
     			return (
       				<Final 
       				nextStep={this.nextStep}
@@ -629,6 +710,9 @@ export default class Formulario extends Component{
             		cambiosProductivos={cambiosProductivos}
             		manejoResiduos={manejoResiduos}
             		tipoArboles={tipoArboles}
+                    metodoRiego={metodoRiego}
+                    fuenteRiego={fuenteRiego}
+                    energiaRiego={energiaRiego}
       				/>
       			)
   			// never forget the default case, otherwise VS code would be mad!

@@ -86,34 +86,34 @@ const Final = ({nextStep, prevStep, values}) => {
           		</tbody>
           	</table>
 
-          	<h3> Cambio del Sistema de Cultivo </h3>
+      <h3> Cambio del Sistema de Cultivo </h3>
 			<h4> Cambio del Sistema de Labranzas </h4>
 			<table>
-          		<thead>
+        <thead>
 					<th></th>
 					<th>Tiempo Transcurrido</th>
 					<th> Porcentaje afectado</th>
 				</thead>
 				<tbody>
-          			<td>{values.cambioLabranza}</td>
-          			<td>{values.tiempoCambioLabranza} años</td>
-          			<td>{values.porcentajeCambioLabranza}%</td>
-          		</tbody>
-          	</table>
+          <td>{values.cambioLabranza}</td>
+          <td>{values.tiempoCambioLabranza} años</td>
+          <td>{values.porcentajeCambioLabranza}%</td>
+         </tbody>
+        </table>
 
-          	<h4> Cambio del Sistema de Labranzas</h4>
-          	<table>
-          		<thead>
-					<th></th>
-					<th>Tiempo Transcurrido</th>
-					<th> Porcentaje afectado</th>
-				</thead>
-				<tbody>
-          			<td>{values.cambioCoberturas}</td>
-          			<td>{values.tiempoCambioCoberturas} años</td>
-          			<td>{values.porcentajeCambioCoberturas}%</td>
-          		</tbody>
-          	</table>
+       	<h4> Cambio en el uso de Cultivos de Cobertura</h4>
+        <table>
+        	<thead>
+						<th></th>
+						<th>Tiempo Transcurrido</th>
+						<th> Porcentaje afectado</th>
+					</thead>
+					<tbody>
+	    			<td>{values.cambioCoberturas}</td>
+	    			<td>{values.tiempoCambioCoberturas} años</td>
+	    			<td>{values.porcentajeCambioCoberturas}%</td>
+	    		</tbody>
+    		</table>
 
           	 <Divider variant="middle" />
 
