@@ -204,7 +204,7 @@ const Final = ({nextStep, prevStep, values, climate, mo, humedadSuelo, pHSuelo, 
 			<table>
     		<thead>
 					<th>Porcentaje del Cultivo Irrigado</th>
-					<th>Lámina de Riego</th>
+					<th>Profundidad de Bombeo</th>
 				</thead>
 				<tbody>
     			<td>{values.porcentajeRiego} %</td>
@@ -228,7 +228,7 @@ const Final = ({nextStep, prevStep, values, climate, mo, humedadSuelo, pHSuelo, 
 					<th>Fuente de Energía Para Riego</th>
 				</thead>
 				<tbody>
-    			<td>{fuenteIrrigacion}</td>
+    			<td>{energiaIrrigacion}</td>
     		</tbody>
     	</table>
     	 <Divider variant="middle" />

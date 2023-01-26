@@ -78,7 +78,7 @@ const Riego= ({nextStep, prevStep, handleChange, values}) => {
   			<TextField
 				id="outlined-number"
 				type="number"
-				label="Lámina de agua (m)"
+				label="Profundidad de Bombeo (m)"
 				onChange={handleChange('profundidadIrrigacion')}
 				defaultValue={values.profundidadIrrigacion}
 			/>
